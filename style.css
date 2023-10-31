@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family: poppins, sans-serif;
+}
+
+body{
+    background-color: #fff;
+    color: black;
+}
+
+/* ########################## header #################### */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100px; */
+    padding: 1.3rem 10%;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px solid dodgerblue;
+}
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, aqua, transparent);
+    transition: .5s;
+}
+.header:hover::after{
+    left: 100%;
+}
+.logo{
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+.navbar a:hover{
+    color: dodgerblue;
+}
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.2rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width: 800px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+@media(max-width:630px){
+    .icons{
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+    .icons #close-icon{
+        display: none;
+    }
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: black;
+        overflow: hidden;
+        transition: .5s ease;
+        border-top: 2px solid dodgerblue;
+        border-bottom: 2px solid dodgerblue;
+    }
+    #check:checked~.navbar{
+        height: 15rem;
+    }
+    .navbar a{
+        display: block;
+        font-size: 1.2rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .5s ease;
+        opacity: 0;
+    }
+    #check:checked~.navbar a{
+        transform: translateY(0);
+        transition-delay: calc(.15s * var(--i));
+        opacity: 1;
+    }
+}
+
+/* ######################### index ############### */
+
+.infoContainer{
+    /* background-color: #fff; */
+    height: 50vh;
+    width: 80vw;
+    margin: 144px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.devInfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.hello{
+    font-size: 50px;
+}
+.name{
+    font-size: 40px;
+    font-weight: bold;
+}
+.about{
+    font-size: 30px;
+}
+.moreabout{
+    font-size: 15px;
+}
+.buttons{
+    margin-top: 20px;
+}
+.devPic img{
+    /* width: 50vh; */
+    height: 350px;
+    position: absolute;
+    z-index: 1;
+    margin-top: -15px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+/* .devPic2 img{
+    width: 60vh;
+} */
+.devPic2 img{
+    position: relative;
+    /* width: 30vh; */
+    height: 350px;
+    margin-top: 0px;
+    z-index: 0;
+    margin-top: 10px;
+}
+
+@media(max-width:795px){
+    .hello{
+        font-size: 40px;
+    }
+    .name{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .about{
+        font-size: 20px;
+    }
+    .moreabout{
+        font-size: 12px;
+    }
+    .buttons{
+        margin-top: 20px;
+    }
+    .btn{
+        padding: 9px 10px;
+        border-radius: 20px;
+        color: #fff;
+        background-color: dodgerblue;
+        font-size: 15px;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    .devPic img{
+        width: 50vh;
+    }
+}
+@media(max-width:695px){
+    .hello{
+        font-size: 30px;
+    }
+    .name{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .about{
+        font-size: 20px;
+    }
+    .devInfo{
+        padding: 0;
+        margin: 0;
+    }
+    .btn{
+        padding: 5px 10px;
+        border-radius: 20px;
+        color: #fff;
+        background-color: dodgerblue;
+        font-size: 12px;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+    .infoContainer{
+        /* background-color: red; */
+        height: 100%;
+        width: 90%;
+        padding: 0;
+        margin: 35px auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .devInfo{
+        text-align: center;
+    }
+    .devPic{
+        position: absolute;
+        overflow: hidden;
+    }
+    .devPic img{
+        width: 280px;
+        margin-top: 70px;
+        z-index: 1;
+        margin-left: 10px;
+        position: relative;
+    }
+    .devPic2 img{
+        width: 300px;
+        height: 350px;
+        margin-top: 50px;
+        z-index: 0;
+        margin-top: 100px;
+    }
+    .footer{
+        margin-bottom: 0;
+    }
+}
+
+
+/* ############# contact ############## */
+.contactform form{
+     display: flex;
+     flex-direction: column;
+     align-items: center;  
+}
+.c-label{
+    width: 300px;
+}
+.contactform h1{
+    font-size: 30px;
+    margin: 100px 0 10px 0;
+    text-align: center;
+}
+.form-control{
+    width: 300px;
+}
+textarea{
+    width: 300px;
+}
+.label{
+    padding-bottom: 6px;
+}
+
+@media(max-width:800px){
+    #menu-icon{
+        display: block;
+        transition: all .4s ease;
+    }
+    #menu-icon.bx-x{
+        transform: rotate(-180deg);
+    }
+    .navlist{
+        display: flex;
+        position: absolute;
+        top: -100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background-color: black;
+        text-align: left;
+        padding: 0 5%;
+        transition: all .45s ease;
+    }
+    .navlist a{
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .navlist.open{
+        top: 100%;
+    }
+}
+
+/* #################### intro ##################### */
+.aboutcontainer{
+    width: 90vw;
+    margin-top: 100px;
+    margin: 70px auto;
+}
+.skills{
+    background: #fff;
+}
+.skill-box{
+    width: 80%;
+    margin: auto;
+}
+.skill-bar{
+    margin-bottom: 2.3rem;
+}
+.skill-box h3{
+    padding: 30px 0 0 0;
+    margin-bottom: 2rem;
+    font-size: 30px;
+    text-align: center;
+}
+.skill-box .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.skill-box .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+    border: 1px solid black;
+}
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: dodgerblue;
+    border-radius: 25px;
+    box-shadow: dodgerblue;
+}
+.skill-bar .bar .html{
+    width: 90%;
+    animation: html 3s;
+}
+.skill-bar .bar .css{
+    width: 80%;
+    animation: css 3s;
+}
+.skill-bar .bar .javascript{
+    width: 40%;
+    animation: javascript 4s;
+}
+.skill-bar .bar .bootstrap{
+    width: 80%;
+    animation: bootstrap 3s;
+}
+@keyframes html{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes css{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes javascript{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 40%;
+    }
+}
+@keyframes bootstrap{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+/* ####################### css overlay ##################### */
+.project-box{
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+.title{
+    text-align: center;
+    margin: 1rem auto;
+}
+.box{
+    position: relative;
+    max-width: 300px;
+    margin: 20px auto;
+}
+.box img{
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    background: dodgerblue;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.4em 0.6em;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease-in;
+}
+.btn:active{
+    background: #454545;
+}
+
+.box-content{
+    position:absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+}
+.box:hover .box-content{
+    opacity: 1;
+    top: 50%;
+}
+.box::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 0.5rem;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.box:hover::after{
+    opacity: 1;
+}
+@media(min-width:630px){
+    .title{
+        font-size: 40px;
+    }
+    .projects{
+        display: flex;
+        justify-content: space-around;
+    }
+    .box{
+        margin: 10px;
+    }
+}
+
+/* ######################### footer ################## */
+.footer{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 5px;
+    border-top: 2px solid dodgerblue;
+}
+.footer a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+}

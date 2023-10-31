@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Portfolio</title>
+    <link rel="stylesheet" href="style.css"><link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header class="header">
+      <a href="#" class="logo">Neeraj</a>
+
+      <input type="checkbox" id="check">
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
+      <nav class="navbar">
+         <a href="/index.html" style="--i:0;">Home</a>
+         <a href="/about.html" style="--i:1;">About Me</a>
+         <!-- <a href="/skill.html" style="--i:2;">Skills</a> -->
+         <a href="/contact.html" style="--i:2;">Contact</a>
+         <a href="/neeraj_resume_.pdf" style="--i:3;">Cv</a>
+
+      </nav>
+    </header>
+
+    <section class="contact-container">
+          <div class="contactform">
+            <h1>Contact me for more information</h1>
+            <form>
+                <div class="label">
+                    <label for="clientname" class="form-label">Name</label>
+                    <br>
+                    <input type="text" class="form-control" id="clientname" placeholder="Your name">
+                  </div>
+                <div class="label">
+                  <label for="clientemail" class="form-label">Email address</label>
+                  <br>
+                  <input type="email" class="form-control" id="clientemail" placeholder="Enter your email">
+                </div>
+                <div class="label">
+                  <label for="clientphone" class="form-label">Phone no.</label>
+                  <br>
+                  <input type="phone" class="form-control" id="clientphone" placeholder="Enter your ten digit mobile number">
+                </div>
+                <div class="label">
+                  <label for="textarea" class="textarea">Enter your enquiry</label> <br>
+                  <textarea name="" id="" cols="30" rows="5"></textarea>
+                </div>
+                
+                <div class="label">
+                  <input type="checkbox" class="form-check" id="isclient">
+                  <label class="form-check-label" for="isclient">Check it for contact me</label>
+                </div>
+                <button type="submit" class="btn btn-primary c-label">Submit</button>
+              </form>
+          </div>
+      </section>
+
+      <footer class="footer">
+          <p>Welcome to my Portfolio Website </p>
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-google"></i></a>
+      </footer>
+</body>
+</html>
