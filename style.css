@@ -12,6 +12,7 @@
 body{
     background-color: #fff;
     color: black;
+    border-bottom: 5px solid black;
 }
 
 /* ########################## header #################### */
